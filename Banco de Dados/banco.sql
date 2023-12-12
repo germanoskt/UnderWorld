@@ -17,3 +17,10 @@ fkPonto INT,
 CONSTRAINT fkP FOREIGN KEY (fkPonto)
 	REFERENCES usuario(id)
 );
+
+
+SELECT usuario.nome AS nome, SUM(pontos.acertos) AS total_pontos
+    FROM usuario
+    JOIN pontuacao ON usuario.id = pontos.fkUsuario
+    GROUP BY usuario.nome
+    ORDER BY total_pontos DESC;
