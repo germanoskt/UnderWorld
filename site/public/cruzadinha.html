@@ -334,10 +334,10 @@ var widthTable = 18;
 var heightTable = 18;
 
 
-var cont_correctAnswer = 0;
+var pontos = 0;
 
 function start() {
-    cont_correctAnswer = 0;
+    pontos = 0;
     bt_start.style.display = 'none';
     bt_destroyGame.style.display = 'block';
     div_questions.style.display = 'block';
@@ -354,57 +354,59 @@ function destroyGrid() {
 
     document.querySelector('#div_canvasCruzada').innerHTML = '';
     pontuation();
+    cadastrar()
+    console.log(pontos, "total de pontos ao lado esquerdo")
 }
 
 function gameSequence() {
-    span_questionText.innerHTML = `<b>${cont_correctAnswer + 1}.</b> ${questions_list[cont_correctAnswer]}`;
+    span_questionText.innerHTML = `<b>${pontos + 1}.</b> ${questions_list[pontos]}`;
 
-    if (cont_correctAnswer == 1) {
+    if (pontos == 1) {
         word.word1.write();
     }
-    else if (cont_correctAnswer == 2) {
+    else if (pontos == 2) {
         word.word2.write();
     }
-    else if (cont_correctAnswer == 3) {
+    else if (pontos == 3) {
         word.word3.write();
     }
-    else if (cont_correctAnswer == 4) {
+    else if (pontos == 4) {
         word.word4.write();
     }
-    else if (cont_correctAnswer == 5) {
+    else if (pontos == 5) {
         word.word5.write();
     }
-    else if (cont_correctAnswer == 6) {
+    else if (pontos == 6) {
         word.word6.write();
     }
-    else if (cont_correctAnswer == 7) {
+    else if (pontos == 7) {
         word.word7.write();
     }
-    else if (cont_correctAnswer == 8) {
+    else if (pontos == 8) {
         word.word8.write();
     }
-    else if (cont_correctAnswer == 9) {
+    else if (pontos == 9) {
         word.word9.write();
     }
-    else if (cont_correctAnswer == 10) {
+    else if (pontos == 10) {
         word.word10.write();
     }
-    else if (cont_correctAnswer == 11) {
+    else if (pontos == 11) {
         word.word11.write();
     }
-    else if (cont_correctAnswer == 12) {
+    else if (pontos == 12) {
         word.word12.write();
     }
-    else if (cont_correctAnswer == 13) {
+    else if (pontos == 13) {
         word.word13.write();
     }
-    else if (cont_correctAnswer == 14) {
+    else if (pontos == 14) {
         word.word14.write();
     }
-    else if (cont_correctAnswer == 15) {
+    else if (pontos == 15) {
         word.word15.write();
     }
-    else if (cont_correctAnswer == 16) {
+    else if (pontos == 16) {
         word.word16.write();
 
         setTimeout(function () {
@@ -472,10 +474,11 @@ function verify() {
 
     if (answer != '') {
         // answer = answer.toLowerCase();
-        if (answer == special_words[cont_correctAnswer]) {
+        if (answer == special_words[pontos]) {
             div_verifiedAnswer.classList.add('correctAnswer');
             div_verifiedAnswer.innerHTML = '<br>Resposta Correta!';
-            cont_correctAnswer++;
+            pontos++;
+            
         }
         else {
             div_verifiedAnswer.classList.add('wrongAnswer');
@@ -495,7 +498,63 @@ function verify() {
     else {
         alert('Por Favor, digite uma resposta na caixa de texto');
     }
-}</script>
+}
+function cadastrar() {
+    var id =  sessionStorage.ID_USUARIO
+   
+
+    fetch("/Ponto/cadastrar", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+       
+        pontoServer: pontos,
+        idServer: id
+        // emailServer: emailVar,
+        // senhaServer: senhaVar,
+       
+      }),
+    })
+      .then(function (resposta) {
+        console.log("resposta: ", resposta);
+
+        if (resposta.ok) {
+          // Swal.fire({
+          // title: "Cadastrado!",
+          // text: "Você faz parte da Sonata agora",
+          // icon: "success",
+          // color: "#F2CF63",
+          // background: "#011126",
+          // iconColor : "#F2CF63",
+          // confirmButtonColor : "#F2CF63",
+         
+        // }).then((result)=> {
+          // if(result.isConfirmed){
+        setTimeout(() => {
+                    window.location = "./login.html";
+                  }, "1000");
+          // }
+        // })
+          
+    
+        //   limparFormulario();
+         
+        } else {
+          throw "Houve um erro ao tentar realizar o cadastro!";
+        }
+      })
+      .catch(function (resposta) {
+        console.log(`#ERRO: ${resposta}`);
+       
+      });
+
+    return false;
+    console.log("total de acerto" , pontos)
+  }
+
+</script>
 </body>
 
 </html>
