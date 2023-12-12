@@ -1,85 +1,81 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>AquaTech | Página Inicial</title>
+    <title>Sonata | Página Inicial</title>
 
     <script src="./js/sessao.js"></script>
-
-    <link rel="icon" href="./assets/icon/favicon2.ico">
-    <link rel="stylesheet" href="./css/estilo.css">
-    <link rel="preconnect" href="https://fonts.gstatic.com">
-    <!-- <link
-        href="https://fonts.googleapis.com/css2?family=Exo+2:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
-        rel="stylesheet"> -->
+    <link rel="icon" href="./imagens/SonataLogoSfundol.jpg">
+    <link rel="stylesheet" href="./css/header.css">
+    <link rel="stylesheet" href="./css/home.css">
 </head>
-
 <body>
-    <div class="header">
-      <div class="container">
-        <h1 class="titulo">AquaTech</h1>
-        <ul class="navbar">
-          <li class="agora">
-            <a href="#">Inicial</a>
-          </li>
-          <li>
-            <a href="simulador.html">Simulador</a>
-          </li>
-          <li>|</li>
-          <li>
-            <a href="login.html">Login</a>
-          </li>
-          <li>
-            <a href="cadastro.html">Cadastro</a>
-          </li>
-        </ul>
-      </div>
+    <!-- header inicio -->
+  <div class="header">
+    <div class="logo">
+        <a href="#"><img src="./imagens/saxlogo.jpg" alt="logo sonata" style="width:100px;"></a>
     </div>
-  
-    <div class="banner">
-      <div class="container">
-        <p>Preservando <span>hoje</span> para existirem <span>amanhã</span>.</p>
-      </div>
-    </div>
-  
-    <div class="social">
-      <div class="container">
-        <div class="boxes">
-          <div class="box">
-            <img src="assets/imgs/planet-earth_color.png">
-            <h4>Missão</h4>
-            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Et, quas cupiditate asperiores provident magnam
-              vitae illum iusto fugiat atque deleniti nulla sed iure suscipit, laborum, aliquid accusantium cum dicta
-              minima.</p>
-          </div>
-          <div class="box">
-            <img src="assets/imgs/lightbulb_color.png">
-            <h4>Visão</h4>
-            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Et, quas cupiditate asperiores provident magnam
-              vitae illum iusto fugiat atque deleniti nulla sed iure suscipit, laborum, aliquid accusantium cum dicta
-              minima.</p>
-          </div>
-          <div class="box">
-            <img src="assets/imgs/growth_color.png">
-            <h4>Valores</h4>
-            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Et, quas cupiditate asperiores provident magnam
-              vitae illum iusto fugiat atque deleniti nulla sed iure suscipit, laborum, aliquid accusantium cum dicta
-              minima.</p>
-          </div>
+    <div class="itens-nav">
+            
+            <a href="#parte2">SOBRE NÓS</a>
+            <a href="#parte3">O PROJETO</a>
+            <a href="./login.html">LOGIN</a>
+            <a href="./cadastro.html">CADASTRE-SE</a>
         </div>
-      </div>
     </div>
-  
-    <div class="footer">
-      <div class="container">
-        <h4>Feito com amor por aluno &hearts; SPTech &copy; 2023</h4>
-        <span class="version">v1.0.0</span>
-      </div>
-    </div>
-  </body>
+    <!-- header fim -->
+        
+    <!-- Primeira parte -->
+    <main>           
+        <div class="flex">
+            <div class="texto_topo">
+                <div class="logoHome">
+                <h1 class="homeSonata">SEJA BEM VINDO A <span class="sonata"> SONATA !</span></h1>
+                </div>
+                <h2>Onde a música encontra seu lar. Sua jornada começa aqui!</h2>
+                
+               
+            </div>
+            <div class="imagem_topo">
+                <img src="./imagens/bandahomePrimeira.svg" alt="imagem logo home" style="width: 600px;">
+               
+            </div>
+        </div>
 
+
+        <!-- segunda parte -->
+        <div class="segundaParte">
+            <h1 class="h1Segunda" id="parte2">Sonata: harmonizando a Experiência Musical</h1>
+            <div class="conteudo2">
+                <div class="imagem2">
+                <img src="./imagens/soloSegunda.svg" alt="" style="width: 400px;">
+            </div>
+                <p>
+                    Esse projeto foi feito a partir de uma paixão pela tecnologia e música, o site conta com um mural interativo para sugestões dos usuários, um piano virtual modo livre para tocar á vontade, e uma seção de analytics apresentando gráficos sobre instrumentos, músicas, gêneros e artistas favoritos, Sonata une a interatividade à paixão pela música, Assim, Sonata não é apenas um site de música; é uma sinfonia digital que reflete a fusão de paixão pela tecnologia e amor pela música.
+                </p>
+            </div>
+        </div>
+
+        <div class="segundaParte">
+            <h1 class="h1Terceira" id="parte3">Sonata: O projeto</h1>
+            <div class="conteudo2 conteudo3">
+                <p>
+                    O projeto "Sonata" é uma iniciativa desenvolvida por Davi Mendonça, estudante do curso de Análise e Desenvolvimento de Sistemas na faculdade SPTech. Criado como projeto individual do primeiro semestre do curso, Sonata visa proporcionar uma experiência envolvente no universo da música.                   
+                </p>
+                <div class="imagem3">
+                    <img src="./imagens/soloTerceira.svg" alt="" style="width: 400px;">
+                </div>
+            </div>
+        </div>
+       
+    </main>
 </html>
+               
+           
+
+  
+ 

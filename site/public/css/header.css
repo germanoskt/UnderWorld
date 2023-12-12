@@ -1,0 +1,86 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@200;400&display=swap');
+body{
+    margin: 0;
+    padding: 0;
+    font-family: 'Josefin Sans', sans-serif;
+    background-color: #000b21;
+}
+
+.header{
+    display: flex;
+    width: 98vw;
+    height: 14vh;
+    justify-content: space-between;
+}
+
+.headerUser{
+    display: flex;
+    width: 100%;
+    height: 14vh;
+    justify-content: space-between; 
+}
+
+.header_jogo1{
+    width: 100%;
+    background-color: #000b21;
+}
+
+.header img{
+    margin-top: 5px;
+    width:100px;
+}
+
+.itens-nav{
+    display: flex;
+    list-style: none;
+    width: 700px; 
+    justify-content: space-around;
+    height: 12vh;
+}
+
+.itens-nav a {
+    position: relative;
+    text-decoration: none;
+    color: #f2ce63dc;
+    font-weight: 400;
+    margin-top:30px ;
+    letter-spacing: 0.5px;
+    padding: 0 10px;
+}
+
+.itens-nav a::after{
+    content: "";
+    position: absolute;
+    background-color: #F2CF63;
+    height: 3px;
+    width: 0%;
+    left: 0;
+    bottom: 22px;
+    transition: 0.3s;
+
+}
+
+.itens-nav a:hover::after{
+    width: 100%;
+}
+
+.itens-nav a:hover{
+    color: #F2CF63;
+    
+}
+
+ ul li a{
+    text-decoration: none;
+}
+
+.drop{
+    position: absolute;
+    display: none;
+}
+
+
+.drop a{
+    display: block;
+
+}
